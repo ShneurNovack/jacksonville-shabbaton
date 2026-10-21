@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jacksonville Shabbaton | Nov 12-15, 2026</title>
+<meta name="description" content="A Jewish social weekend getaway in Jacksonville, Florida, November 12-15, 2026. All meals and lodging included for $150. Hosted by Chabad of Town Center Jacksonville.">
+<meta property="og:title" content="Jacksonville Shabbaton, Nov 12-15, 2026">
+<meta property="og:description" content="All meals and lodging included for $150. Men and women ages 30-40. Registration closes Nov 9.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #14243f;
+    --navy-deep: #0d1a2e;
+    --sand: #f5ecdd;
+    --paper: #fbf7f0;
+    --ink: #1c2433;
+    --muted: #5b6474;
+    --sun: #e8843c;
+    --sun-deep: #c2622a;
+    --sea: #1f7a86;
+    --gold: #f0b84a;
+    --line: #d9cdb8;
+  }
+  * { box-sizing: border-box; border-radius: 0; box-shadow: none; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  a { color: var(--sea); }
+  h1, h2, h3 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 104px 0; }
+
+  .btn {
+    display: inline-block;
+    background: var(--sun);
+    color: var(--navy-deep);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 18px 30px;
+    font-size: 17px;
+    border: 2px solid var(--sun);
+  }
+  .btn:hover { background: var(--gold); border-color: var(--gold); }
+  .btn.ghost { background: transparent; color: var(--paper); border-color: var(--paper); }
+  .btn.ghost:hover { background: var(--paper); color: var(--navy-deep); }
+  .btn.dark { background: var(--navy); color: var(--paper); border-color: var(--navy); }
+  .btn.dark:hover { background: var(--sea); border-color: var(--sea); }
+
+  .hero { background: var(--navy); color: var(--paper); padding: 120px 0 112px; }
+  .hero h1 { font-size: clamp(56px, 11vw, 150px); color: var(--paper); }
+  .hero h1 span { color: var(--sun); }
+  .hero .lede {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(22px, 3vw, 30px);
+    line-height: 1.35;
+    max-width: 640px;
+    margin: 32px 0 0;
+    color: #e9e2d3;
+  }
+  .hero .facts {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 56px 0 48px;
+    border-top: 1px solid rgba(245, 236, 221, 0.25);
+  }
+  .hero .facts div { flex: 1 1 200px; padding: 22px 24px 0 0; }
+  .hero .facts b {
+    display: block;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--gold);
+  }
+  .hero .facts span { font-size: 15px; color: #c9d1de; }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: 14px; }
+  .hero .deadline { margin-top: 28px; font-size: 15px; color: #c9d1de; }
+
+  .intro { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: start; }
+  .intro h2 { font-size: clamp(36px, 5vw, 56px); }
+  .intro .aside { border-left: 4px solid var(--sun); padding: 4px 0 4px 28px; }
+  .intro .aside p { font-size: 19px; margin: 0 0 18px; }
+
+  .included { background: var(--sand); }
+  .included h2 { font-size: clamp(36px, 5vw, 56px); max-width: 720px; }
+  .grid-6 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 56px;
+    border-top: 2px solid var(--navy);
+  }
+  .grid-6 div { padding: 36px 32px 40px 0; border-bottom: 1px solid var(--line); }
+  .grid-6 div:nth-child(3n+2), .grid-6 div:nth-child(3n) { padding-left: 32px; border-left: 1px solid var(--line); }
+  .grid-6 h3 { font-size: 24px; margin-bottom: 10px; }
+  .grid-6 p { margin: 0; color: var(--muted); }
+
+  .itinerary h2 { font-size: clamp(36px, 5vw, 56px); }
+  .itinerary .sub { color: var(--muted); max-width: 640px; margin: 18px 0 0; }
+  .steps { margin-top: 56px; }
+  .step {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 40px;
+    padding: 40px 0;
+    border-top: 1px solid var(--line);
+  }
+  .step:last-child { border-bottom: 1px solid var(--line); }
+  .step .when {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--sea);
+    line-height: 1.2;
+  }
+  .step h3 { font-size: 30px; margin-bottom: 12px; }
+  .step p { margin: 0; max-width: 680px; }
+  .step ul { margin: 16px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+  .step li { border: 1px solid var(--navy); padding: 6px 14px; font-size: 15px; }
+
+  .adventures { background: var(--navy); color: var(--paper); }
+  .adventures h2 { font-size: clamp(36px, 5vw, 56px); color: var(--paper); }
+  .adventures .sub { color: #c9d1de; max-width: 620px; margin: 18px 0 0; }
+  .tags { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 44px; }
+  .tags span {
+    border: 1px solid rgba(245, 236, 221, 0.45);
+    padding: 12px 20px;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 21px;
+  }
+  .tags span.hot { background: var(--sun); border-color: var(--sun); color: var(--navy-deep); }
+
+  .price-card { display: grid; grid-template-columns: 1.2fr 1fr; border: 2px solid var(--navy); }
+  .price-main { padding: 56px; background: var(--gold); color: var(--navy-deep); }
+  .price-main .big {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(88px, 13vw, 168px);
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+  }
+  .price-main .big small {
+    font-size: 0.32em;
+    vertical-align: top;
+    margin-right: 6px;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+  .price-main p { margin: 22px 0 0; font-size: 19px; font-weight: 500; }
+  .price-main .note { font-size: 15px; font-weight: 400; margin-top: 8px; }
+  .price-side { padding: 56px; display: flex; flex-direction: column; justify-content: space-between; gap: 32px; }
+  .price-side h3 { font-size: 34px; }
+  .price-side p { margin: 12px 0 0; color: var(--muted); }
+  .offer { border-left: 4px solid var(--sun); padding-left: 22px; }
+  .offer strong { font-family: "Fraunces", Georgia, serif; font-size: 30px; color: var(--sun-deep); display: block; }
+
+  .where { background: var(--sand); }
+  .where .intro { align-items: center; }
+  .where h2 { font-size: clamp(36px, 5vw, 56px); }
+  .where ul { margin: 0; padding: 0; list-style: none; }
+  .where li {
+    padding: 22px 0;
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 16px;
+  }
+  .where li:last-child { border-bottom: 1px solid var(--line); }
+  .where li b { font-family: "Fraunces", Georgia, serif; font-size: 20px; font-weight: 600; }
+
+  .register { background: var(--sea); color: var(--paper); }
+  .register h2 { font-size: clamp(44px, 7vw, 92px); color: var(--paper); max-width: 900px; }
+  .register p { font-size: 20px; max-width: 640px; margin: 28px 0 0; color: #e4f1f2; }
+  .register .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 44px; }
+  .register .contact {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(251, 247, 240, 0.4);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  .register .contact div { font-size: 15px; color: #d4ebed; }
+  .register .contact b {
+    display: block;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--paper);
+  }
+
+  footer { background: var(--navy-deep); color: #aab3c2; padding: 40px 0; font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+  .sticky { position: fixed; left: 0; right: 0; bottom: 0; display: none; background: var(--sun); padding: 14px 24px; z-index: 10; }
+  .sticky a {
+    display: block;
+    text-align: center;
+    background: var(--navy-deep);
+    color: var(--paper);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 16px;
+  }
+
+  @media (max-width: 880px) {
+    section { padding: 72px 0; }
+    .intro, .price-card { grid-template-columns: 1fr; gap: 40px; }
+    .price-main, .price-side { padding: 36px 28px; }
+    .grid-6 { grid-template-columns: 1fr 1fr; }
+    .grid-6 div:nth-child(3n+2), .grid-6 div:nth-child(3n) { padding-left: 0; border-left: 0; }
+    .grid-6 div:nth-child(2n) { padding-left: 24px; border-left: 1px solid var(--line); }
+    .step { grid-template-columns: 1fr; gap: 12px; }
+    .where li { grid-template-columns: 1fr; gap: 4px; }
+    .sticky { display: block; }
+    body { padding-bottom: 80px; }
+  }
+  @media (max-width: 560px) {
+    .grid-6 { grid-template-columns: 1fr; }
+    .grid-6 div { padding: 28px 0; border-left: 0 !important; padding-left: 0 !important; }
+    .hero .facts div { flex: 1 1 100%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Jacksonville<br><span>Shabbaton</span></h1>
+    <p class="lede">A weekend getaway for Jewish men and women ages 30 to 40. Shabbos with friends, great food, and a city worth finding out for yourself.</p>
+    <div class="facts">
+      <div><b>Nov 12-15</b><span>Thursday through Sunday, 2026</span></div>
+      <div><b>$150</b><span>All meals and lodging included</span></div>
+      <div><b>Nov 9</b><span>Registration closes</span></div>
+    </div>
+    <div class="actions">
+      <a class="btn" href="https://wa.me/17863332596?text=Hi%2C%20I%27d%20like%20to%20register%20for%20the%20Jacksonville%20Shabbaton%20(Nov%2012-15).">Register on WhatsApp</a>
+      <a class="btn ghost" href="#details">See what is included</a>
+    </div>
+    <p class="deadline">First 5 people to sign up get $50 off.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap intro">
+    <div>
+      <h2>Ever wonder why Jacksonville is worth a visit?</h2>
+    </div>
+    <div class="aside">
+      <p>Jacksonville is the largest city in the contiguous United States by land area, with palm-lined waterfront, the St. Johns River, and beaches a short drive away.</p>
+      <p>Hosted by Chabad of Town Center Jacksonville, this is a Jewish social getaway built around a full Shabbos, time with friends, and room to pick your own weekend.</p>
+    </div>
+  </div>
+</section>
+
+<section class="included" id="details">
+  <div class="wrap">
+    <h2>Everything you need is already taken care of.</h2>
+    <div class="grid-6">
+      <div>
+        <h3>All meals</h3>
+        <p>Every meal is included across the weekend, from Shabbos through Sunday.</p>
+      </div>
+      <div>
+        <h3>Lodging</h3>
+        <p>Your room is included, about an 8-minute walk from shul and meals.</p>
+      </div>
+      <div>
+        <h3>Non-stop flights</h3>
+        <p>Fly in from NYC on a non-stop flight. Thursday night arrival is an option.</p>
+      </div>
+      <div>
+        <h3>Road trip from Miami</h3>
+        <p>Driving up from Miami? It makes a fun trip with friends.</p>
+      </div>
+      <div>
+        <h3>Close to beaches</h3>
+        <p>Spend Sunday on the sand with a beach day, BBQ, and an optional boat tour.</p>
+      </div>
+      <div>
+        <h3>Your own adventure</h3>
+        <p>Choose your own activities all weekend. Local adventures are not included in the price.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="itinerary">
+  <div class="wrap">
+    <h2>The weekend, roughly.</h2>
+    <p class="sub">Thursday night arrival is optional. The weekend is built around Shabbos, with open time to explore.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="when">Thursday night</div>
+        <div>
+          <h3>Arrive and settle in</h3>
+          <p>Arrival options for Thursday night, so you can start the weekend early.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="when">Friday, before Shabbos</div>
+        <div>
+          <h3>Pre-Shabbos Toameha</h3>
+          <p>A meal to welcome Shabbos together before candle lighting.</p>
+          <ul><li>Pre-Shabbos Toameha</li></ul>
+        </div>
+      </div>
+      <div class="step">
+        <div class="when">Motzei Shabbos</div>
+        <div>
+          <h3>Bonfire and kumzitz</h3>
+          <p>Once Shabbos ends, gather around the fire for singing and conversation.</p>
+          <ul><li>Bonfire</li><li>Kumzitz</li></ul>
+        </div>
+      </div>
+      <div class="step">
+        <div class="when">Sunday</div>
+        <div>
+          <h3>Beach day, BBQ, and optional boat tour</h3>
+          <p>A relaxed last day at the beach with a BBQ, plus a boat tour for anyone who wants one.</p>
+          <ul><li>Beach</li><li>BBQ</li><li>Boat tour (optional)</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="adventures">
+  <div class="wrap">
+    <h2>Pick your own weekend.</h2>
+    <p class="sub">Beaches, boats, good food, and a road trip from Miami. Plan what you like, and spend time with the group when you want to.</p>
+    <div class="tags">
+      <span>Beach</span>
+      <span>Boat tour</span>
+      <span>Great food</span>
+      <span>Friends</span>
+      <span class="hot">Fun road trip from Miami</span>
+      <span>And more</span>
+    </div>
+  </div>
+</section>
+
+<section class="price" id="price">
+  <div class="wrap">
+    <div class="price-card">
+      <div class="price-main">
+        <div class="big"><small>Only</small>$150</div>
+        <p>Includes all meals and lodging.</p>
+        <p class="note">Local adventures are not included.</p>
+      </div>
+      <div class="price-side">
+        <div class="offer">
+          <strong>First 5 to sign up: $50 off</strong>
+          <p>Message Nosson now to claim one of the first five spots.</p>
+        </div>
+        <div>
+          <h3>Registration closes Nov 9</h3>
+          <p>Spots are limited, so register early.</p>
+          <p style="margin-top:28px"><a class="btn dark" href="https://wa.me/17863332596?text=Hi%2C%20I%27d%20like%20to%20register%20for%20the%20Jacksonville%20Shabbaton%20(Nov%2012-15).">Register on WhatsApp</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="where">
+  <div class="wrap intro">
+    <div>
+      <h2>Where you will stay</h2>
+      <p style="margin-top:24px;color:var(--muted)">Your lodging is a short walk from shul and every meal, so you can stay close to the group all weekend.</p>
+    </div>
+    <ul>
+      <li><b>Location</b><span>Jacksonville, Florida</span></li>
+      <li><b>Lodging</b><span>Included with registration</span></li>
+      <li><b>Walk to shul</b><span>About 8 minutes</span></li>
+      <li><b>Getting here</b><span>Non-stop flights from NYC, or a road trip from Miami</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="register" id="register">
+  <div class="wrap">
+    <h2>Save your spot before Nov 9.</h2>
+    <p>Reach out on WhatsApp to register, ask questions, or lock in the $50 early bird discount before the first five spots are gone.</p>
+    <div class="actions">
+      <a class="btn" href="https://wa.me/17863332596?text=Hi%2C%20I%27d%20like%20to%20register%20for%20the%20Jacksonville%20Shabbaton%20(Nov%2012-15).">Register on WhatsApp</a>
+      <a class="btn ghost" href="tel:+17863332596">Call 786-333-2596</a>
+    </div>
+    <div class="contact">
+      <div>Contact<b>Nosson Seigel</b></div>
+      <div>WhatsApp<b>786-333-2596</b></div>
+      <div>Hosted by<b>Chabad of Town Center Jacksonville</b></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Jacksonville Shabbaton, November 12-15, 2026</span>
+    <span>Chabad of Town Center Jacksonville</span>
+  </div>
+</footer>
+
+<div class="sticky">
+  <a href="https://wa.me/17863332596?text=Hi%2C%20I%27d%20like%20to%20register%20for%20the%20Jacksonville%20Shabbaton%20(Nov%2012-15).">Register on WhatsApp, $150</a>
+</div>
+
+</body>
+</html>

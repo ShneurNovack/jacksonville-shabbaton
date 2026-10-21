@@ -7,292 +7,251 @@
 <meta name="description" content="A Jewish social weekend getaway in Jacksonville, Florida, November 12-15, 2026. All meals and lodging included for $150. Hosted by Chabad of Town Center Jacksonville.">
 <meta property="og:title" content="Jacksonville Shabbaton, Nov 12-15, 2026">
 <meta property="og:description" content="All meals and lodging included for $150. Men and women ages 30-40. Registration closes Nov 9.">
+<meta property="og:image" content="img/hero-skyline.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy: #14243f;
     --navy-deep: #0d1a2e;
-    --sand: #f5ecdd;
-    --paper: #fbf7f0;
-    --ink: #1c2433;
-    --muted: #5b6474;
+    --sand: #f4ede1;
+    --paper: #fbf8f2;
+    --ink: #1d2433;
+    --muted: #5d6676;
     --sun: #e8843c;
-    --sun-deep: #c2622a;
-    --sea: #1f7a86;
+    --sea: #1d7480;
     --gold: #f0b84a;
-    --line: #d9cdb8;
+    --line: #dcd1bd;
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   }
-  * { box-sizing: border-box; border-radius: 0; box-shadow: none; }
+  *, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; text-shadow: none; }
   html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-    font-size: 17px;
-    line-height: 1.65;
-  }
-  a { color: var(--sea); }
-  h1, h2, h3 {
-    font-family: "Fraunces", Georgia, serif;
-    font-weight: 800;
-    line-height: 1.1;
-    margin: 0;
-    letter-spacing: -0.01em;
-  }
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-  section { padding: 104px 0; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.08; margin: 0; letter-spacing: -0.015em; }
+  p { margin: 0; }
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+  section { padding: 120px 0; }
 
-  .btn {
-    display: inline-block;
-    background: var(--sun);
-    color: var(--navy-deep);
-    font-weight: 600;
-    text-decoration: none;
-    padding: 18px 30px;
-    font-size: 17px;
-    border: 2px solid var(--sun);
-  }
+  /* Buttons: flat, square */
+  .btn { display: inline-block; font-family: var(--sans); font-weight: 600; font-size: 16px; text-decoration: none; padding: 18px 32px; border: 2px solid var(--sun); background: var(--sun); color: var(--navy-deep); transition: background-color .2s, color .2s, border-color .2s; }
   .btn:hover { background: var(--gold); border-color: var(--gold); }
-  .btn.ghost { background: transparent; color: var(--paper); border-color: var(--paper); }
-  .btn.ghost:hover { background: var(--paper); color: var(--navy-deep); }
-  .btn.dark { background: var(--navy); color: var(--paper); border-color: var(--navy); }
-  .btn.dark:hover { background: var(--sea); border-color: var(--sea); }
+  .btn.line { background: transparent; color: #fff; border-color: #fff; }
+  .btn.line:hover { background: #fff; color: var(--navy-deep); }
+  .btn.navy { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .btn.navy:hover { background: var(--sea); border-color: var(--sea); }
 
-  .hero { background: var(--navy); color: var(--paper); padding: 120px 0 112px; }
-  .hero h1 { font-size: clamp(56px, 11vw, 150px); color: var(--paper); }
-  .hero h1 span { color: var(--sun); }
-  .hero .lede {
-    font-family: "Fraunces", Georgia, serif;
-    font-size: clamp(22px, 3vw, 30px);
-    line-height: 1.35;
-    max-width: 640px;
-    margin: 32px 0 0;
-    color: #e9e2d3;
+  /* Hero: one large image that rotates */
+  .hero { position: relative; min-height: 100vh; min-height: 100svh; display: flex; align-items: flex-end; color: #fff; background: var(--navy-deep); overflow: hidden; }
+  .hero .slides { position: absolute; inset: 0; }
+  .hero .slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; animation: rotate 21s infinite; }
+  .hero .slide:nth-child(1) { background-image: url("img/hero-skyline.jpg"); animation-delay: 0s; }
+  .hero .slide:nth-child(2) { background-image: url("img/hero-night.jpg"); animation-delay: 7s; }
+  .hero .slide:nth-child(3) { background-image: url("img/hero-beach.jpg"); animation-delay: 14s; }
+  @keyframes rotate {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    33% { opacity: 1; }
+    38%, 100% { opacity: 0; }
   }
-  .hero .facts {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 56px 0 48px;
-    border-top: 1px solid rgba(245, 236, 221, 0.25);
-  }
-  .hero .facts div { flex: 1 1 200px; padding: 22px 24px 0 0; }
-  .hero .facts b {
-    display: block;
-    font-family: "Fraunces", Georgia, serif;
-    font-size: 26px;
-    font-weight: 600;
-    color: var(--gold);
-  }
-  .hero .facts span { font-size: 15px; color: #c9d1de; }
-  .hero .actions { display: flex; flex-wrap: wrap; gap: 14px; }
-  .hero .deadline { margin-top: 28px; font-size: 15px; color: #c9d1de; }
+  .hero .tint { position: absolute; inset: 0; background: rgba(13, 26, 46, 0.5); }
+  .hero .inner { position: relative; padding: 0 0 110px; width: 100%; }
+  .hero h1 { font-size: clamp(64px, 11vw, 172px); line-height: 0.95; max-width: 1000px; }
+  .hero .lede { margin-top: 36px; font-family: var(--serif); font-size: clamp(22px, 2.6vw, 30px); line-height: 1.35; max-width: 620px; color: #f4ede1; }
+  .hero .actions { margin-top: 44px; display: flex; flex-wrap: wrap; gap: 14px; }
 
-  .intro { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: start; }
-  .intro h2 { font-size: clamp(36px, 5vw, 56px); }
-  .intro .aside { border-left: 4px solid var(--sun); padding: 4px 0 4px 28px; }
-  .intro .aside p { font-size: 19px; margin: 0 0 18px; }
+  /* Fact bar */
+  .facts { background: var(--navy); color: #fff; }
+  .facts .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .facts .cell { padding: 36px 28px 36px 0; border-right: 1px solid rgba(255,255,255,0.14); padding-left: 28px; }
+  .facts .cell:first-child { padding-left: 0; }
+  .facts .cell:last-child { border-right: 0; }
+  .facts b { display: block; font-family: var(--serif); font-weight: 500; font-size: 30px; color: var(--gold); line-height: 1.1; }
+  .facts span { display: block; margin-top: 6px; font-size: 15px; color: #c8d0dd; }
 
+  /* Intro with photo */
+  .intro { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .intro .photo { aspect-ratio: 4 / 5; background: url("img/riverwalk.jpg") center / cover no-repeat; }
+  .intro h2 { font-size: clamp(40px, 5vw, 64px); }
+  .intro p { margin-top: 28px; font-size: 19px; color: var(--ink); }
+  .intro p + p { margin-top: 18px; color: var(--muted); }
+
+  /* Included */
   .included { background: var(--sand); }
-  .included h2 { font-size: clamp(36px, 5vw, 56px); max-width: 720px; }
-  .grid-6 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: 56px;
-    border-top: 2px solid var(--navy);
-  }
-  .grid-6 div { padding: 36px 32px 40px 0; border-bottom: 1px solid var(--line); }
-  .grid-6 div:nth-child(3n+2), .grid-6 div:nth-child(3n) { padding-left: 32px; border-left: 1px solid var(--line); }
-  .grid-6 h3 { font-size: 24px; margin-bottom: 10px; }
-  .grid-6 p { margin: 0; color: var(--muted); }
+  .included h2 { font-size: clamp(40px, 5vw, 64px); max-width: 820px; }
+  .included .sub { margin-top: 22px; font-size: 19px; color: var(--muted); max-width: 640px; }
+  .list { margin-top: 72px; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 56px; }
+  .list .item { border-top: 2px solid var(--navy); padding: 30px 0 52px; }
+  .list .num { font-family: var(--serif); font-size: 18px; color: var(--sea); }
+  .list h3 { margin-top: 14px; font-size: 30px; }
+  .list p { margin-top: 14px; color: var(--muted); }
 
-  .itinerary h2 { font-size: clamp(36px, 5vw, 56px); }
-  .itinerary .sub { color: var(--muted); max-width: 640px; margin: 18px 0 0; }
-  .steps { margin-top: 56px; }
-  .step {
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 40px;
-    padding: 40px 0;
-    border-top: 1px solid var(--line);
-  }
-  .step:last-child { border-bottom: 1px solid var(--line); }
-  .step .when {
-    font-family: "Fraunces", Georgia, serif;
-    font-size: 26px;
-    font-weight: 600;
-    color: var(--sea);
-    line-height: 1.2;
-  }
-  .step h3 { font-size: 30px; margin-bottom: 12px; }
-  .step p { margin: 0; max-width: 680px; }
-  .step ul { margin: 16px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
-  .step li { border: 1px solid var(--navy); padding: 6px 14px; font-size: 15px; }
+  /* Itinerary */
+  .itinerary h2 { font-size: clamp(40px, 5vw, 64px); }
+  .day { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; padding: 80px 0; border-top: 1px solid var(--line); }
+  .day:first-of-type { margin-top: 72px; }
+  .day.flip .media { order: 2; }
+  .day.solo { grid-template-columns: 1fr; }
+  .day .when { font-family: var(--serif); font-size: 22px; color: var(--sea); }
+  .day h3 { margin-top: 12px; font-size: clamp(30px, 3.4vw, 42px); }
+  .day p { margin-top: 18px; color: var(--muted); font-size: 18px; max-width: 520px; }
+  .day .tags { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .day .tags span { border: 1px solid var(--navy); padding: 6px 14px; font-size: 14px; }
+  .media { aspect-ratio: 4 / 3; background-size: cover; background-position: center; }
+  .media.beach { background-image: url("img/hero-beach.jpg"); }
+  .media.night { background-image: url("img/hero-night.jpg"); }
+  .media.boat { background-image: url("img/landing.jpg"); }
+  .media.river { background-image: url("img/riverwalk.jpg"); }
+  .media.plain { background: var(--sand); border: 1px solid var(--line); }
 
-  .adventures { background: var(--navy); color: var(--paper); }
-  .adventures h2 { font-size: clamp(36px, 5vw, 56px); color: var(--paper); }
-  .adventures .sub { color: #c9d1de; max-width: 620px; margin: 18px 0 0; }
-  .tags { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 44px; }
-  .tags span {
-    border: 1px solid rgba(245, 236, 221, 0.45);
-    padding: 12px 20px;
-    font-family: "Fraunces", Georgia, serif;
-    font-size: 21px;
-  }
-  .tags span.hot { background: var(--sun); border-color: var(--sun); color: var(--navy-deep); }
+  /* Adventures band */
+  .adventures { position: relative; color: #fff; background: var(--navy-deep); }
+  .adventures .bg { position: absolute; inset: 0; background: url("img/landing.jpg") center / cover no-repeat; }
+  .adventures .tint { position: absolute; inset: 0; background: rgba(13, 26, 46, 0.72); }
+  .adventures .wrap { position: relative; }
+  .adventures h2 { font-size: clamp(40px, 5vw, 64px); }
+  .adventures .sub { margin-top: 22px; font-size: 19px; color: #d3dae5; max-width: 620px; }
+  .adventures .tags { margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid rgba(255,255,255,0.25); }
+  .adventures .tags span { padding: 26px 0; font-family: var(--serif); font-size: 26px; border-bottom: 1px solid rgba(255,255,255,0.25); }
+  .adventures .tags span:nth-child(3n+2) { padding-left: 32px; border-left: 1px solid rgba(255,255,255,0.25); }
+  .adventures .tags span:nth-child(3n) { padding-left: 32px; border-left: 1px solid rgba(255,255,255,0.25); }
+  .adventures .tags span.hot { color: var(--gold); }
 
-  .price-card { display: grid; grid-template-columns: 1.2fr 1fr; border: 2px solid var(--navy); }
-  .price-main { padding: 56px; background: var(--gold); color: var(--navy-deep); }
-  .price-main .big {
-    font-family: "Fraunces", Georgia, serif;
-    font-size: clamp(88px, 13vw, 168px);
-    font-weight: 800;
-    line-height: 0.9;
-    letter-spacing: -0.03em;
-  }
-  .price-main .big small {
-    font-size: 0.32em;
-    vertical-align: top;
-    margin-right: 6px;
-    font-weight: 600;
-    letter-spacing: 0;
-  }
-  .price-main p { margin: 22px 0 0; font-size: 19px; font-weight: 500; }
-  .price-main .note { font-size: 15px; font-weight: 400; margin-top: 8px; }
-  .price-side { padding: 56px; display: flex; flex-direction: column; justify-content: space-between; gap: 32px; }
+  /* Price */
+  .price h2 { font-size: clamp(40px, 5vw, 64px); }
+  .price-grid { margin-top: 64px; display: grid; grid-template-columns: 1.15fr 1fr; border: 2px solid var(--navy); }
+  .price-main { background: var(--gold); padding: 64px; color: var(--navy-deep); }
+  .price-main .big { font-family: var(--serif); font-weight: 500; font-size: clamp(110px, 14vw, 200px); line-height: 0.85; letter-spacing: -0.04em; }
+  .price-main .big small { font-size: 0.3em; letter-spacing: 0; vertical-align: top; margin-right: 8px; font-family: var(--sans); font-weight: 600; }
+  .price-main p { margin-top: 28px; font-size: 20px; font-weight: 500; }
+  .price-main .note { margin-top: 6px; font-size: 15px; font-weight: 400; }
+  .price-side { padding: 64px; display: flex; flex-direction: column; justify-content: space-between; gap: 40px; }
+  .offer { border-left: 4px solid var(--sun); padding-left: 24px; }
+  .offer strong { display: block; font-family: var(--serif); font-weight: 500; font-size: 32px; color: var(--sun); line-height: 1.15; }
+  .offer p { margin-top: 10px; color: var(--muted); }
   .price-side h3 { font-size: 34px; }
-  .price-side p { margin: 12px 0 0; color: var(--muted); }
-  .offer { border-left: 4px solid var(--sun); padding-left: 22px; }
-  .offer strong { font-family: "Fraunces", Georgia, serif; font-size: 30px; color: var(--sun-deep); display: block; }
+  .price-side .deadline { margin-top: 10px; color: var(--muted); }
 
+  /* Where */
   .where { background: var(--sand); }
-  .where .intro { align-items: center; }
-  .where h2 { font-size: clamp(36px, 5vw, 56px); }
-  .where ul { margin: 0; padding: 0; list-style: none; }
-  .where li {
-    padding: 22px 0;
-    border-top: 1px solid var(--line);
-    display: grid;
-    grid-template-columns: 170px 1fr;
-    gap: 16px;
-  }
-  .where li:last-child { border-bottom: 1px solid var(--line); }
-  .where li b { font-family: "Fraunces", Georgia, serif; font-size: 20px; font-weight: 600; }
+  .where .intro { align-items: start; }
+  .where h2 { font-size: clamp(40px, 5vw, 64px); }
+  .where .body { margin-top: 26px; font-size: 19px; color: var(--muted); }
+  .facts-list { margin: 0; padding: 0; list-style: none; }
+  .facts-list li { display: grid; grid-template-columns: 180px 1fr; gap: 20px; padding: 28px 0; border-top: 1px solid var(--line); }
+  .facts-list li:last-child { border-bottom: 1px solid var(--line); }
+  .facts-list b { font-family: var(--serif); font-weight: 500; font-size: 22px; }
+  .facts-list span { color: var(--ink); }
 
-  .register { background: var(--sea); color: var(--paper); }
-  .register h2 { font-size: clamp(44px, 7vw, 92px); color: var(--paper); max-width: 900px; }
-  .register p { font-size: 20px; max-width: 640px; margin: 28px 0 0; color: #e4f1f2; }
-  .register .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 44px; }
-  .register .contact {
-    margin-top: 56px;
-    padding-top: 28px;
-    border-top: 1px solid rgba(251, 247, 240, 0.4);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-  }
-  .register .contact div { font-size: 15px; color: #d4ebed; }
-  .register .contact b {
-    display: block;
-    font-family: "Fraunces", Georgia, serif;
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--paper);
-  }
+  /* Register */
+  .register { background: var(--sea); color: #fff; }
+  .register h2 { font-size: clamp(48px, 7.5vw, 104px); max-width: 1000px; }
+  .register p { margin-top: 32px; font-size: 20px; max-width: 640px; color: #e6f3f4; }
+  .register .actions { margin-top: 48px; display: flex; flex-wrap: wrap; gap: 14px; }
+  .register .contact { margin-top: 80px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.35); display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .register .contact small { display: block; font-size: 14px; color: #cfe6e8; }
+  .register .contact b { display: block; margin-top: 4px; font-family: var(--serif); font-weight: 500; font-size: 26px; }
 
-  footer { background: var(--navy-deep); color: #aab3c2; padding: 40px 0; font-size: 14px; }
-  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+  footer { background: var(--navy-deep); color: #aeb8c8; padding: 48px 0; font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
+  footer .credit { max-width: 640px; }
 
-  .sticky { position: fixed; left: 0; right: 0; bottom: 0; display: none; background: var(--sun); padding: 14px 24px; z-index: 10; }
-  .sticky a {
-    display: block;
-    text-align: center;
-    background: var(--navy-deep);
-    color: var(--paper);
-    text-decoration: none;
-    font-weight: 600;
-    padding: 16px;
-  }
+  .sticky { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: var(--sun); padding: 12px; }
+  .sticky a { display: block; text-align: center; background: var(--navy-deep); color: #fff; text-decoration: none; font-weight: 600; padding: 17px; }
 
-  @media (max-width: 880px) {
-    section { padding: 72px 0; }
-    .intro, .price-card { grid-template-columns: 1fr; gap: 40px; }
-    .price-main, .price-side { padding: 36px 28px; }
-    .grid-6 { grid-template-columns: 1fr 1fr; }
-    .grid-6 div:nth-child(3n+2), .grid-6 div:nth-child(3n) { padding-left: 0; border-left: 0; }
-    .grid-6 div:nth-child(2n) { padding-left: 24px; border-left: 1px solid var(--line); }
-    .step { grid-template-columns: 1fr; gap: 12px; }
-    .where li { grid-template-columns: 1fr; gap: 4px; }
+  @media (max-width: 960px) {
+    section { padding: 88px 0; }
+    .intro, .day, .price-grid, .where .intro { grid-template-columns: 1fr; gap: 48px; }
+    .intro .photo { aspect-ratio: 4 / 3; }
+    .day { padding: 64px 0; }
+    .day.flip .media { order: 0; }
+    .list { grid-template-columns: 1fr; }
+    .facts .wrap { grid-template-columns: 1fr 1fr; }
+    .facts .cell { padding: 28px 16px 28px 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,0.14); }
+    .facts .cell:nth-child(odd) { padding-left: 0; }
+    .adventures .tags { grid-template-columns: 1fr 1fr; }
+    .register .contact { grid-template-columns: 1fr; gap: 24px; }
+    .price-main, .price-side { padding: 40px 28px; }
     .sticky { display: block; }
-    body { padding-bottom: 80px; }
+    body { padding-bottom: 72px; }
   }
   @media (max-width: 560px) {
-    .grid-6 { grid-template-columns: 1fr; }
-    .grid-6 div { padding: 28px 0; border-left: 0 !important; padding-left: 0 !important; }
-    .hero .facts div { flex: 1 1 100%; }
+    .wrap { padding: 0 22px; }
+    .facts .wrap { grid-template-columns: 1fr; }
+    .facts .cell { padding-left: 0 !important; }
+    .facts-list li { grid-template-columns: 1fr; gap: 6px; }
+    .adventures .tags { grid-template-columns: 1fr; }
+    .adventures .tags span:nth-child(n) { padding-left: 0; border-left: 0; }
+    .hero .inner { padding-bottom: 72px; }
+    .hero .actions .btn { width: 100%; text-align: center; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero .slide { animation: none; }
+    .hero .slide:nth-child(1) { opacity: 1; }
   }
 </style>
 </head>
 <body>
 
 <header class="hero">
-  <div class="wrap">
-    <h1>Jacksonville<br><span>Shabbaton</span></h1>
+  <div class="slides" aria-hidden="true">
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+  </div>
+  <div class="tint"></div>
+  <div class="wrap inner">
+    <h1>Jacksonville<br>Shabbaton</h1>
     <p class="lede">A weekend getaway for Jewish men and women ages 30 to 40. Shabbos with friends, great food, and a city worth finding out for yourself.</p>
-    <div class="facts">
-      <div><b>Nov 12-15</b><span>Thursday through Sunday, 2026</span></div>
-      <div><b>$150</b><span>All meals and lodging included</span></div>
-      <div><b>Nov 9</b><span>Registration closes</span></div>
-    </div>
     <div class="actions">
       <a class="btn" href="https://wa.me/17863332596?text=Hi%2C%20I%27d%20like%20to%20register%20for%20the%20Jacksonville%20Shabbaton%20(Nov%2012-15).">Register on WhatsApp</a>
-      <a class="btn ghost" href="#details">See what is included</a>
+      <a class="btn line" href="#details">What is included</a>
     </div>
-    <p class="deadline">First 5 people to sign up get $50 off.</p>
   </div>
 </header>
 
+<div class="facts">
+  <div class="wrap">
+    <div class="cell"><b>Nov 12-15</b><span>Thursday to Sunday, 2026</span></div>
+    <div class="cell"><b>$150</b><span>All meals and lodging</span></div>
+    <div class="cell"><b>$50 off</b><span>For the first 5 to sign up</span></div>
+    <div class="cell"><b>Nov 9</b><span>Registration closes</span></div>
+  </div>
+</div>
+
 <section>
   <div class="wrap intro">
+    <div class="photo" role="img" aria-label="Jacksonville riverwalk along the St. Johns River"></div>
     <div>
       <h2>Ever wonder why Jacksonville is worth a visit?</h2>
-    </div>
-    <div class="aside">
-      <p>Jacksonville is the largest city in the contiguous United States by land area, with palm-lined waterfront, the St. Johns River, and beaches a short drive away.</p>
-      <p>Hosted by Chabad of Town Center Jacksonville, this is a Jewish social getaway built around a full Shabbos, time with friends, and room to pick your own weekend.</p>
+      <p>Jacksonville is the largest city in the contiguous United States by land area, with palm-lined waterfront, the St. Johns River running through downtown, and beaches a short drive away.</p>
+      <p>This is a Jewish social getaway hosted by Chabad of Town Center Jacksonville. It is built around a full Shabbos, time with friends, and room to pick your own weekend.</p>
     </div>
   </div>
 </section>
 
 <section class="included" id="details">
   <div class="wrap">
-    <h2>Everything you need is already taken care of.</h2>
-    <div class="grid-6">
-      <div>
+    <h2>Everything else is taken care of.</h2>
+    <p class="sub">Your meals and your room are included. You show up, and the weekend is planned.</p>
+    <div class="list">
+      <div class="item">
+        <span class="num">01</span>
         <h3>All meals</h3>
-        <p>Every meal is included across the weekend, from Shabbos through Sunday.</p>
+        <p>Every meal across the weekend, from Shabbos through Sunday.</p>
       </div>
-      <div>
+      <div class="item">
+        <span class="num">02</span>
         <h3>Lodging</h3>
-        <p>Your room is included, about an 8-minute walk from shul and meals.</p>
+        <p>Your room is included, about an 8-minute walk from shul and every meal.</p>
       </div>
-      <div>
-        <h3>Non-stop flights</h3>
-        <p>Fly in from NYC on a non-stop flight. Thursday night arrival is an option.</p>
-      </div>
-      <div>
-        <h3>Road trip from Miami</h3>
-        <p>Driving up from Miami? It makes a fun trip with friends.</p>
-      </div>
-      <div>
-        <h3>Close to beaches</h3>
-        <p>Spend Sunday on the sand with a beach day, BBQ, and an optional boat tour.</p>
-      </div>
-      <div>
-        <h3>Your own adventure</h3>
-        <p>Choose your own activities all weekend. Local adventures are not included in the price.</p>
+      <div class="item">
+        <span class="num">03</span>
+        <h3>Getting here</h3>
+        <p>Non-stop flights from NYC, or a fun road trip up from Miami.</p>
       </div>
     </div>
   </div>
@@ -301,53 +260,60 @@
 <section class="itinerary">
   <div class="wrap">
     <h2>The weekend, roughly.</h2>
-    <p class="sub">Thursday night arrival is optional. The weekend is built around Shabbos, with open time to explore.</p>
-    <div class="steps">
-      <div class="step">
+
+    <div class="day solo">
+      <div>
         <div class="when">Thursday night</div>
-        <div>
-          <h3>Arrive and settle in</h3>
-          <p>Arrival options for Thursday night, so you can start the weekend early.</p>
-        </div>
+        <h3>Arrive early</h3>
+        <p>Thursday night arrival is optional, so you can start the weekend a day early and settle in before Shabbos.</p>
+        <div class="tags"><span>Optional arrival</span></div>
       </div>
-      <div class="step">
-        <div class="when">Friday, before Shabbos</div>
-        <div>
-          <h3>Pre-Shabbos Toameha</h3>
-          <p>A meal to welcome Shabbos together before candle lighting.</p>
-          <ul><li>Pre-Shabbos Toameha</li></ul>
-        </div>
+    </div>
+
+    <div class="day flip">
+      <div class="media river" role="img" aria-label="Shabbos in Jacksonville"></div>
+      <div>
+        <div class="when">Friday to Saturday, Shabbos</div>
+        <h3>Pre-Shabbos Toameha, then Shabbos with the group</h3>
+        <p>A Toameha meal to welcome Shabbos together before candle lighting, followed by a full weekend of meals with the group.</p>
+        <div class="tags"><span>Pre-Shabbos Toameha</span><span>All meals</span></div>
       </div>
-      <div class="step">
+    </div>
+
+    <div class="day">
+      <div>
         <div class="when">Motzei Shabbos</div>
-        <div>
-          <h3>Bonfire and kumzitz</h3>
-          <p>Once Shabbos ends, gather around the fire for singing and conversation.</p>
-          <ul><li>Bonfire</li><li>Kumzitz</li></ul>
-        </div>
+        <h3>Bonfire and kumzitz</h3>
+        <p>Once Shabbos ends, gather around the fire for singing and conversation under the Jacksonville sky.</p>
+        <div class="tags"><span>Bonfire</span><span>Kumzitz</span></div>
       </div>
-      <div class="step">
+      <div class="media night" role="img" aria-label="Motzei Shabbos"></div>
+    </div>
+
+    <div class="day flip">
+      <div class="media beach" role="img" aria-label="Beach day"></div>
+      <div>
         <div class="when">Sunday</div>
-        <div>
-          <h3>Beach day, BBQ, and optional boat tour</h3>
-          <p>A relaxed last day at the beach with a BBQ, plus a boat tour for anyone who wants one.</p>
-          <ul><li>Beach</li><li>BBQ</li><li>Boat tour (optional)</li></ul>
-        </div>
+        <h3>Beach day, BBQ, and an optional boat tour</h3>
+        <p>A relaxed last day on the sand with a BBQ. Take the optional boat tour if you want to see the water from the other side.</p>
+        <div class="tags"><span>Beach</span><span>BBQ</span><span>Boat tour (optional)</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <section class="adventures">
+  <div class="bg" aria-hidden="true"></div>
+  <div class="tint" aria-hidden="true"></div>
   <div class="wrap">
     <h2>Pick your own weekend.</h2>
-    <p class="sub">Beaches, boats, good food, and a road trip from Miami. Plan what you like, and spend time with the group when you want to.</p>
+    <p class="sub">Local adventures are not included in the price, so plan what you like and spend time with the group whenever you want.</p>
     <div class="tags">
       <span>Beach</span>
       <span>Boat tour</span>
       <span>Great food</span>
       <span>Friends</span>
-      <span class="hot">Fun road trip from Miami</span>
+      <span class="hot">Road trip from Miami</span>
       <span>And more</span>
     </div>
   </div>
@@ -355,10 +321,11 @@
 
 <section class="price" id="price">
   <div class="wrap">
-    <div class="price-card">
+    <h2>One price. Everything included.</h2>
+    <div class="price-grid">
       <div class="price-main">
         <div class="big"><small>Only</small>$150</div>
-        <p>Includes all meals and lodging.</p>
+        <p>Includes all meals and lodging for the whole weekend.</p>
         <p class="note">Local adventures are not included.</p>
       </div>
       <div class="price-side">
@@ -368,8 +335,8 @@
         </div>
         <div>
           <h3>Registration closes Nov 9</h3>
-          <p>Spots are limited, so register early.</p>
-          <p style="margin-top:28px"><a class="btn dark" href="https://wa.me/17863332596?text=Hi%2C%20I%27d%20like%20to%20register%20for%20the%20Jacksonville%20Shabbaton%20(Nov%2012-15).">Register on WhatsApp</a></p>
+          <p class="deadline">Spots are limited, so register early.</p>
+          <p style="margin-top:32px"><a class="btn navy" href="https://wa.me/17863332596?text=Hi%2C%20I%27d%20like%20to%20register%20for%20the%20Jacksonville%20Shabbaton%20(Nov%2012-15).">Register on WhatsApp</a></p>
         </div>
       </div>
     </div>
@@ -380,9 +347,9 @@
   <div class="wrap intro">
     <div>
       <h2>Where you will stay</h2>
-      <p style="margin-top:24px;color:var(--muted)">Your lodging is a short walk from shul and every meal, so you can stay close to the group all weekend.</p>
+      <p class="body">Your lodging is a short walk from shul and every meal, so the whole group stays close together for the weekend.</p>
     </div>
-    <ul>
+    <ul class="facts-list">
       <li><b>Location</b><span>Jacksonville, Florida</span></li>
       <li><b>Lodging</b><span>Included with registration</span></li>
       <li><b>Walk to shul</b><span>About 8 minutes</span></li>
@@ -397,12 +364,12 @@
     <p>Reach out on WhatsApp to register, ask questions, or lock in the $50 early bird discount before the first five spots are gone.</p>
     <div class="actions">
       <a class="btn" href="https://wa.me/17863332596?text=Hi%2C%20I%27d%20like%20to%20register%20for%20the%20Jacksonville%20Shabbaton%20(Nov%2012-15).">Register on WhatsApp</a>
-      <a class="btn ghost" href="tel:+17863332596">Call 786-333-2596</a>
+      <a class="btn line" href="tel:+17863332596">Call 786-333-2596</a>
     </div>
     <div class="contact">
-      <div>Contact<b>Nosson Seigel</b></div>
-      <div>WhatsApp<b>786-333-2596</b></div>
-      <div>Hosted by<b>Chabad of Town Center Jacksonville</b></div>
+      <div><small>Contact</small><b>Nosson Seigel</b></div>
+      <div><small>WhatsApp</small><b>786-333-2596</b></div>
+      <div><small>Hosted by</small><b>Chabad of Town Center Jacksonville</b></div>
     </div>
   </div>
 </section>
@@ -410,7 +377,7 @@
 <footer>
   <div class="wrap">
     <span>Jacksonville Shabbaton, November 12-15, 2026</span>
-    <span>Chabad of Town Center Jacksonville</span>
+    <span class="credit">Photos from Wikimedia Commons: Jacksonville skyline (CC BY-SA 4.0), Jacksonville skyline at night, New Year 2025 (CC BY 2.0), beach drone shot (CC0), Southbank Riverwalk (CC BY-SA 4.0), Jacksonville Landing (CC BY 2.0).</span>
   </div>
 </footer>
 
